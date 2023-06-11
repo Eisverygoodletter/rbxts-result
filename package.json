@@ -4,8 +4,8 @@
 	"description": "An implementation of Rust-like Results for use with roblox-ts",
 	"main": "out/init.lua",
 	"scripts": {
-		"build": "rbxtsc",
-		"watch": "rbxtsc -w",
+		"build": "npx rbxtsc",
+		"watch": "npx rbxtsc -w",
 		"prepublishOnly": "npm run build"
 	},
 	"keywords": [],
