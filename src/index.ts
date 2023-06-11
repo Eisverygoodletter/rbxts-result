@@ -15,9 +15,9 @@ abstract class _Result<T, E> {
 		return !this.isOk();
 	}
 	/**
-	* Directly returns the value regardless whether it is Ok or Err
-	* @returns Contained value which may be T or E
-	*/
+	 * Directly returns the value regardless whether it is Ok or Err
+	 * @returns Contained value which may be T or E
+	 */
 	public unsafeUnwrap(): T | E {
 		return this.value;
 	}
@@ -49,7 +49,6 @@ export class Ok<T, E> extends _Result<T, E> {
 		super();
 		this.value = value;
 	}
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	public unwrapFunc<R = T>(okCallback: TransformCallback<T, R>, errCallback: TransformCallback<E, R>): R {
 		return okCallback(this.value);
 	}
