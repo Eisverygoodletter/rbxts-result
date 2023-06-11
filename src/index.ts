@@ -61,9 +61,9 @@ export class Err<T, E> extends _Result<T, E> {
 		return false;
 	}
 	value: E;
-	constructor(error: E) {
+	constructor(value: E) {
 		super();
-		this.value = error;
+		this.value = value;
 	}
 	public unwrapFunc<R = T>(okCallback: TransformCallback<T, R>, errCallback: TransformCallback<E, R>): R {
 		return errCallback(this.value);
