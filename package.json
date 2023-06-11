@@ -8,15 +8,16 @@
 		"watch": "npx rbxtsc -w",
 		"prepublishOnly": "npm run build"
 	},
-	"keywords": [],
-	"author": "Eisverygoodletter",
+	"keywords": ["roblox-ts"],
+	"author": "eisverygoodletter",
 	"license": "ISC",
 	"types": "out/index.d.ts",
 	"files": [
 		"out",
 		"!**/*.tsbuildinfo"
 	],
-	"repository": "https://github.com/Eisverygoodletter/rbxts-result",
+	"repository": { "type":"git", "url": "git+github.com/Eisverygoodletter/rbxts-result.git"},
+	"homepage":"",
 	"publishConfig": {
 		"access": "public"
 	},
