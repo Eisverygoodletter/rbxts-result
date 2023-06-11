@@ -16,6 +16,7 @@
 		"out",
 		"!**/*.tsbuildinfo"
 	],
+	"repository": "https://github.com/Eisverygoodletter/rbxts-result",
 	"publishConfig": {
 		"access": "public"
 	},
