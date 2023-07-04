@@ -9,14 +9,16 @@
 		"prepublishOnly": "npm run build"
 	},
 	"keywords": [],
-	"author": "Eisverygoodletter",
+	"author": {"name":"eisverygoodletter"},
 	"license": "ISC",
 	"types": "out/index.d.ts",
 	"files": [
 		"out",
 		"!**/*.tsbuildinfo"
 	],
-	"repository": "https://github.com/Eisverygoodletter/rbxts-result",
+	"private": false,
+	"repository": { "type":"git", "url": "git://github.com/Eisverygoodletter/rbxts-result.git"},
+	"homepage":"https://github.com/Eisverygoodletter/rbxts-result",
 	"publishConfig": {
 		"access": "public"
 	},
