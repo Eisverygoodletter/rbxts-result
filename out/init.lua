@@ -1,24 +1,42 @@
 -- Compiled with roblox-ts v2.1.0
 --[[
 	*
-	* A callback that receives type T and returns type R
+	* A callback that receives type {@link T} and returns type {@link R}
 ]]
 --[[
 	*
 	* DO NOT USE THIS CLASS
 	* @internal
-	* A common base class both `Ok` and `Err` both inherit from
+	* A common base class both {@link Ok} and {@link Err} both inherit from
 ]]
 local _Result
 do
 	_Result = {}
 	function _Result:constructor()
 	end
-	function _Result:isErr()
-		return not self:isOk()
+	function _Result:is_err()
+		return not self:is_ok()
 	end
-	function _Result:unsafeUnwrap()
+	function _Result:unsafe_unwrap()
 		return self.value
+	end
+	function _Result:unwrap_ok(msg)
+		if self:is_ok() then
+			return self:unsafe_unwrap()
+		end
+		if msg == nil then
+			error({ "Attempted to unwrap Err() as Ok()", self })
+		end
+		error(msg)
+	end
+	function _Result:unwrap_err(msg)
+		if self:is_err() then
+			return self:unsafe_unwrap()
+		end
+		if msg == nil then
+			error({ "Attempted to unwrap Ok() as Err()", self })
+		end
+		error(msg)
 	end
 end
 local Ok
@@ -39,13 +57,13 @@ do
 		super.constructor(self)
 		self.value = value
 	end
-	function Ok:isOk()
+	function Ok:is_ok()
 		return true
 	end
-	function Ok:unwrapFunc(okCallback, errCallback)
+	function Ok:unwrap_func(okCallback, errCallback)
 		return okCallback(self.value)
 	end
-	function Ok:unwrapOr(alternative)
+	function Ok:unwrap_or(alternative)
 		return self.value
 	end
 end
@@ -67,13 +85,13 @@ do
 		super.constructor(self)
 		self.value = value
 	end
-	function Err:isOk()
+	function Err:is_ok()
 		return false
 	end
-	function Err:unwrapFunc(okCallback, errCallback)
+	function Err:unwrap_func(okCallback, errCallback)
 		return errCallback(self.value)
 	end
-	function Err:unwrapOr(alternative)
+	function Err:unwrap_or(alternative)
 		return alternative
 	end
 end

@@ -1,6 +1,6 @@
 {
 	"name": "@rbxts/result",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "An implementation of Rust-like Results for use with roblox-ts",
 	"main": "out/init.lua",
 	"scripts": {
@@ -9,7 +9,9 @@
 		"prepublishOnly": "npm run build"
 	},
 	"keywords": [],
-	"author": {"name":"eisverygoodletter"},
+	"author": {
+		"name": "eisverygoodletter"
+	},
 	"license": "ISC",
 	"types": "out/index.d.ts",
 	"files": [
@@ -17,8 +19,11 @@
 		"!**/*.tsbuildinfo"
 	],
 	"private": false,
-	"repository": { "type":"git", "url": "git://github.com/Eisverygoodletter/rbxts-result.git"},
-	"homepage":"https://github.com/Eisverygoodletter/rbxts-result",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/Eisverygoodletter/rbxts-result.git"
+	},
+	"homepage": "https://github.com/Eisverygoodletter/rbxts-result",
 	"publishConfig": {
 		"access": "public"
 	},
